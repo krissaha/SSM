@@ -7,33 +7,38 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
 
 import com.qa.shipment.base.TestBase;
 import com.qa.shipment.util.TestUtil;
 
-public class Dashboardpage extends TestBase {
+public class CustomerCorporatePage extends TestBase {
 
 	// Page factory - OR:
-	@FindBy(xpath = "//span[contains(text(),'Shipment')]")
-	WebElement shipment;
+	@FindBy(xpath = "//a[@class='logoarea']")
+	WebElement logo;
+
+	@FindBy(id = "SelectedCompanyId")
+	WebElement CompanyName;
+
+	@FindBy(className = "newsc")
+	WebElement Continue;
 
 	// Initializing the page object
-	public Dashboardpage() {
+	public CustomerCorporatePage() {
 		PageFactory.initElements(driver, this);
 	}
 
 	// Actions
-	public void verifydashboardtitle() {
-		String s = "Dashboard";
-		Assert.assertEquals(s,driver.getTitle());
+	public String verifynvlogo() {
+		return driver.getTitle();
 	}
 
-	public Searchpage selectshipment() throws Exception {
+	public Dashboardpage companyselect(String value) throws Exception {
 		driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT, TimeUnit.SECONDS);
-		Thread.sleep(3000);
-		shipment.click();
-		return new Searchpage();
+		Select os = new Select(CompanyName);
+		os.selectByValue(value);
+		Continue.click();
+		return new Dashboardpage();
 	}
 }

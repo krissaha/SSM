@@ -1,5 +1,10 @@
 package com.qa.shipment.pages;
 
-public class Maintenancepage {
+import com.qa.shipment.base.TestBase;
+
+public class Maintenancepage extends TestBase 
+{
+	
+	
 
 }
