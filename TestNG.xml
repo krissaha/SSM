@@ -8,6 +8,7 @@
 	<test name="Shipment Module">
 		<classes>
 			<class name="com.qa.shipment.testcase.SearchpageTest"/>
+			<class name="com.qa.shipment.testcase.MaintenancepageTest"/>
 		</classes>
 	</test>
 

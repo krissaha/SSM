@@ -3,14 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.qa.shipment.testcase.SearchpageTest">
+      <class name="com.qa.shipment.testcase.MaintenancepageTest">
         <methods>
-          <include name="shipmentnumberSearch"/>
           <include name="setup"/>
-          <include name="globalSearch"/>
+          <include name="shipmentCreation"/>
           <include name="tearDown"/>
         </methods>
-      </class> <!-- com.qa.shipment.testcase.SearchpageTest -->
+      </class> <!-- com.qa.shipment.testcase.MaintenancepageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

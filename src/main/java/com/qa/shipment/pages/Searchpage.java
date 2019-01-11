@@ -32,7 +32,13 @@ public class Searchpage extends TestBase {
 
 	@FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[5]/div[2]/div[1]/div[3]/table[1]/tbody[1]/tr[1]/td[1]/input[1]")
 	WebElement selectitem2; // Select the check box
-
+	
+	@FindBy(xpath = "//div[@class='dropdown slick-slide slick-active' and @data-slick-index='1']")
+	WebElement click_create; // clicking on CREATE button on the top of the panel.
+	
+	@FindBy(xpath = "//div[@class='show-sidebar']")
+	WebElement slider; // click the sliding bar
+	
 	// Initializing the page objects
 	public Searchpage() {
 		PageFactory.initElements(driver, this);
@@ -70,6 +76,14 @@ public class Searchpage extends TestBase {
 		JavascriptExecutor js = ((JavascriptExecutor) driver);
 		js.executeScript("window.scrollBy(0,-2000)");
 		Thread.sleep(7000);
+		return new Maintenancepage();
+	}
+	
+	public Maintenancepage clickCreate() throws Exception
+	{
+		click_create.click();
+		Thread.sleep(5000);
+		slider.click();
 		return new Maintenancepage();
 	}
 }
