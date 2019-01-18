@@ -33,10 +33,10 @@ public class TestBase
 	public static void init() {
 		String browsername = prop.getProperty("Browser");
 		if (browsername.equals("CHROME")) {
-			WebDriverManager.chromedriver().setup();
+			System.setProperty("webdriver.chrome.driver","E:\\Selenium\\chromedriver.exe");
 			driver = new ChromeDriver();
 		} else if (browsername.equals("FF")) {
-			WebDriverManager.firefoxdriver().setup();
+			System.setProperty("webdriver.gecko.driver", "E:\\\\Selenium\\geckodriver.exe");
 			driver = new FirefoxDriver();
 		} else if (browsername.equals("IE")) {
 			WebDriverManager.iedriver().setup();
@@ -47,6 +47,5 @@ public class TestBase
 		driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT, TimeUnit.SECONDS);
 		driver.get(prop.getProperty("Url"));
-
 	}
 }

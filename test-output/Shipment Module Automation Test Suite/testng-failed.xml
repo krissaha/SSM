@@ -6,13 +6,21 @@
   </listeners>
   <test thread-count="5" name="Shipment Module(failed)">
     <classes>
-      <class name="com.qa.shipment.testcase.DashboardpageTest">
+      <class name="com.qa.shipment.testcase.MaintenancepageTest">
         <methods>
           <include name="setup"/>
-          <include name="companyselection"/>
+          <include name="shipmentCreation"/>
           <include name="tearDown"/>
         </methods>
-      </class> <!-- com.qa.shipment.testcase.DashboardpageTest -->
+      </class> <!-- com.qa.shipment.testcase.MaintenancepageTest -->
+      <class name="com.qa.shipment.testcase.SearchpageTest">
+        <methods>
+          <include name="shipmentnumberSearch"/>
+          <include name="setup"/>
+          <include name="globalSearch"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.qa.shipment.testcase.SearchpageTest -->
     </classes>
   </test> <!-- Shipment Module(failed) -->
 </suite> <!-- Failed suite [Shipment Module Automation Test Suite] -->
